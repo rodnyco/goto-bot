@@ -7,5 +7,10 @@
     "slim/psr7": "^1.4",
     "php-di/php-di": "^6.3",
     "slim/http": "^1.2"
+  },
+  "config": {
+    "platform": {
+      "php": "8.0"
+    }
   }
 }
