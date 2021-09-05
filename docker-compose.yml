@@ -12,6 +12,8 @@ services:
       - php
   php:
     build: ./docker/php/
+    environment:
+      JAWSDB_MARIA_URL: "${JAWSDB_MARIA_URL}"
     expose:
       - 9000
     volumes:

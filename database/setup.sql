@@ -3,8 +3,9 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 -- Table structure for main
 -- ----------------------------
-USE main;
-DROP TABLE IF EXISTS `main`;
+# USE main;
+USE nc2dawboee9zeb7r;
+# DROP TABLE IF EXISTS `main`;
 CREATE TABLE IF NOT EXISTS `places` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `title` varchar(100) NOT NULL,
@@ -18,15 +19,15 @@ CREATE TABLE IF NOT EXISTS `places` (
 -- ----------------------------
 -- Records of places
 -- ----------------------------
-# INSERT INTO `places` (`title`, `description`, `address`, `link`, `tg_user_id`)
-# VALUES (
-#            'Тайланд',
-#            'Джунгли острова красота',
-#            'Пхукет',
-#            'https://lp-cms-production.imgix.net/2021-03/GettyRF_178111904.jpg?auto=format&fit=crop&sharp=10&vib=20&ixlib=react-8.6.4&w=850',
-#            '32501'
-#        );
-#
+INSERT INTO `places` (`title`, `description`, `address`, `link`, `tg_user_id`)
+VALUES (
+           'Тайланд',
+           'Джунгли острова красота',
+           'Пхукет',
+           'https://lp-cms-production.imgix.net/2021-03/GettyRF_178111904.jpg?auto=format&fit=crop&sharp=10&vib=20&ixlib=react-8.6.4&w=850',
+           '32501'
+       );
+
 
 
 SET FOREIGN_KEY_CHECKS = 1;
