@@ -38,6 +38,12 @@ $username = $dbparts['user'];
 $password = $dbparts['pass'];
 $database = ltrim($dbparts['path'],'/');
 
+$settings = require __DIR__ . '/../src/App/Settings.php';
+$hostname = $settings['db']['host'];
+$username = $settings['db']['user'];
+$password = $settings['db']['pass'];
+$database = $settings['db']['name'];
+
 try {
     $conn = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
