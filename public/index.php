@@ -64,7 +64,7 @@ try {
 //}
 
 
-$bot_api_key  = '1974042160:AAFmXM6KllULFtB7nkEnbQSeatvmD4uj1bg';
+$bot_api_key  = '';
 $bot_username = 'goto_story_bot';
 
 try {
@@ -73,6 +73,7 @@ try {
 
     // Handle telegram webhook request
     $telegram->handle();
+
 } catch (Longman\TelegramBot\Exception\TelegramException $e) {
     // Silence is golden!
     // log telegram errors
