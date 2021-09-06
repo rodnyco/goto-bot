@@ -1,6 +1,7 @@
 <?php
 require '../vendor/autoload.php';
 
+use Longman\TelegramBot\Entities\Update;
 use Longman\TelegramBot\Request;
 use Slim\Factory\AppFactory;
 //
@@ -74,12 +75,22 @@ try {
     $telegram = new Longman\TelegramBot\Telegram($bot_api_key, $bot_username);
 
     // Handle telegram webhook request
-    $res = $telegram->handle();
-    file_put_contents("php://stderr", print_r(['test' => 1, 'test2' => 'dfdf'], true));
-//    $result = Request::sendMessage([
-//        'chat_id' => $chat_id,
-//        'text'    => 'Your utf8 text 😜 ...',
-//    ]);
+    $telegram->handle();
+
+    $post = json_decode(Request::getInput(), true);
+
+
+    $oUpdate = new Update($post, $bot_username);
+    $oMessage = $oUpdate->getMessage();
+
+    $sText = $oMessage->getText();
+
+    file_put_contents("php://stderr", print_r($oMessage->getChat()->getId(), true));
+    $result = Request::sendMessage([
+        'chat_id' => $oMessage->getChat()->getId(),
+        'text'    => $sText,
+    ]);
+
 } catch (Longman\TelegramBot\Exception\TelegramException $e) {
     // Silence is golden!
     // log telegram errors
