@@ -75,7 +75,7 @@ try {
 
     // Handle telegram webhook request
     $res = $telegram->handle();
-    file_put_contents("php://stderr", print_r($res));
+    file_put_contents("php://stderr", print_r($res, true));
 //    $result = Request::sendMessage([
 //        'chat_id' => $chat_id,
 //        'text'    => 'Your utf8 text 😜 ...',
