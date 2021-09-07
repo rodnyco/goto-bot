@@ -1,17 +1,6 @@
 <?php
 require '../vendor/autoload.php';
+use App\Bot;
 
-$bot_api_key  = getenv('TG_API_KEY');;
-$bot_username = 'goto_story_bot';
-
-try {
-    // Create Telegram API object
-    $telegram = new Longman\TelegramBot\Telegram($bot_api_key, $bot_username);
-
-    $telegram->addCommandClass(StartCommand::class);
-    $telegram->handle();
-} catch (Longman\TelegramBot\Exception\TelegramException $e) {
-    // Silence is golden!
-    // log telegram errors
-    //echo $e->getMessage();
-}
+$bot = new Bot\GoToBot('goto_story_bot', '1974042160:AAEo9-pbxuHbn8lHIf5E2Arhc0JZ7DZNryo');
+$bot->run();

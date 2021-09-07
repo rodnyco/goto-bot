@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 
+namespace App\Command;
 
 class StartCommand extends \Longman\TelegramBot\Commands\SystemCommand
 {
