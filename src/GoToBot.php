@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace App\Bot;
+namespace App;
 
 use App\Command\StartCommand;
 use Longman\TelegramBot;
